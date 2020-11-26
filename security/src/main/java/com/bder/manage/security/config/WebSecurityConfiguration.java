@@ -1,5 +1,8 @@
 package com.bder.manage.security.config;
 
+import com.bder.manage.security.helper.UserPasswordEncoder;
+import com.bder.manage.security.provider.NullAuthenticationProvider;
+import com.bder.manage.security.service.impl.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,6 +11,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * @author Felix YF Dong
@@ -22,14 +26,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected UserDetailsService userDetailsService(){
         //采用一个自定义的实现UserDetailsService接口的类
-        return new WebSecurityConfiguration();
+        return new CustomUserDetailsService();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // TODO
-//        auth.authenticationProvider(new NullAuthenticationProvider());
-//        super.configure(auth);
+        auth.authenticationProvider(new NullAuthenticationProvider());
+        super.configure(auth);
     }
 
     /**
@@ -42,10 +45,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return manager;
     }
 
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        //return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-//        return new CustomPasswordEncoder();
-//    }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        //return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        return new UserPasswordEncoder();
+    }
 
 }

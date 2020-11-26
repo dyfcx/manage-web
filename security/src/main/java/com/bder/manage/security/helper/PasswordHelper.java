@@ -2,6 +2,7 @@ package com.bder.manage.security.helper;
 
 import org.jasypt.digest.StandardStringDigester;
 import org.jasypt.util.password.PasswordEncryptor;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;

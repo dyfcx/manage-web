@@ -2,6 +2,7 @@ package com.bder.manage.security.helper;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Felix YF Dong

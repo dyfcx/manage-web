@@ -1,6 +1,10 @@
 package com.bder.manage.security.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -42,16 +46,18 @@ public class SysUser {
     private String password;
 
     @Column(name = "create_by")
+    @CreatedBy
     private String createBy;
 
     @Column(name = "create_on")
-    @Temporal(value = TIMESTAMP)
+    @CreatedDate
     private LocalDateTime createOn;
 
     @Column(name = "update_by")
+    @LastModifiedBy
     private String updateBy;
 
     @Column(name = "update_on")
-    @Temporal(value = TIMESTAMP)
+    @LastModifiedDate
     private LocalDateTime updateOn;
 }

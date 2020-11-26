@@ -1,6 +1,7 @@
 package com.bder.manage.security.helper;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Felix YF Dong
