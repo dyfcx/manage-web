@@ -9,46 +9,24 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-import static javax.persistence.TemporalType.TIMESTAMP;
-
 /**
  * @author Felix YF Dong
- * @date 2020/11/25
+ * @date 2020/12/7
  */
 @Entity
 @Data
-@Table(name = "sys_user")
-public class SysUser {
+@Table(name = "sys_user_role")
+public class SysUserRole {
 
     @Id
     @GeneratedValue
     private String id;
 
-    @Column(name = "username", nullable = false, unique = true)
-    private String username;
+    @Column(name = "user_id", nullable = false)
+    private String userId;
 
-    @Column(name = "real_name", nullable = false)
-    private String realName;
-
-    @Column(name = "age")
-    private String age;
-
-    @Column(name = "gender")
-    private String gender;
-
-    @Column(name = "phone", nullable = false)
-    private String phone;
-
-    @Column(name = "email", nullable = false)
-    private String email;
-
-    @Column(name = "password")
-    private String password;
-
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name="profile_photo", columnDefinition="longblob", nullable=true)
-    private byte[] profilePhoto;
+    @Column(name = "role_ids", nullable = false)
+    private String roleId;
 
     @Column(name = "create_by")
     @CreatedBy
