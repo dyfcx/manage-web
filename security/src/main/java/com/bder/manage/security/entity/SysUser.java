@@ -8,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
 
@@ -44,6 +45,9 @@ public class SysUser {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "salt")
+    private String salt;
 
     @Lob
     @Basic(fetch = FetchType.LAZY)
