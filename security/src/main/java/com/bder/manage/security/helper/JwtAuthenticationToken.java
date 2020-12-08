@@ -1,4 +1,4 @@
-package com.bder.manage.security.config;
+package com.bder.manage.security.helper;
 
 import java.util.Collection;
 import java.util.Collections;

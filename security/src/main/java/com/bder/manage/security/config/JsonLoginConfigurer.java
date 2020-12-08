@@ -1,6 +1,7 @@
 package com.bder.manage.security.config;
 
 import com.bder.manage.security.filter.JwtAuthenticationTokenFilter;
+import com.bder.manage.security.handle.HttpStatusLoginFailureHandler;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;

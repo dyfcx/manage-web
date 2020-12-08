@@ -3,6 +3,9 @@ package com.bder.manage.security.config;
 import java.util.Arrays;
 
 import com.bder.manage.security.filter.OptionsRequestFilter;
+import com.bder.manage.security.handle.JsonLoginSuccessHandler;
+import com.bder.manage.security.handle.JwtRefreshSuccessHandler;
+import com.bder.manage.security.handle.TokenClearLogoutHandler;
 import com.bder.manage.security.provider.JwtAuthenticationProvider;
 import com.bder.manage.security.service.SysUserService;
 import org.springframework.context.annotation.Bean;

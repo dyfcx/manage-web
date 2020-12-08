@@ -2,7 +2,7 @@ package com.bder.manage.security.provider;
 
 import java.util.Calendar;
 
-import com.bder.manage.security.config.JwtAuthenticationToken;
+import com.bder.manage.security.helper.JwtAuthenticationToken;
 import com.bder.manage.security.service.SysUserService;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

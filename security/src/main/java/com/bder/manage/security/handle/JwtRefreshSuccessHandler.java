@@ -1,4 +1,4 @@
-package com.bder.manage.security.config;
+package com.bder.manage.security.handle;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bder.manage.security.helper.JwtAuthenticationToken;
 import com.bder.manage.security.service.SysUserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

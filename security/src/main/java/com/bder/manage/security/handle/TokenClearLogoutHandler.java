@@ -1,4 +1,4 @@
-package com.bder.manage.security.config;
+package com.bder.manage.security.handle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

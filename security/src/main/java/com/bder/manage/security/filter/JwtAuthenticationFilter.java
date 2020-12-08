@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bder.manage.security.config.JwtAuthenticationToken;
+import com.bder.manage.security.helper.JwtAuthenticationToken;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
