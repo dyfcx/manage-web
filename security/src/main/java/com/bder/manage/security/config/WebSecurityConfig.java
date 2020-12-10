@@ -1,6 +1,7 @@
 package com.bder.manage.security.config;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.bder.manage.security.filter.OptionsRequestFilter;
 import com.bder.manage.security.handle.JsonLoginSuccessHandler;
@@ -114,9 +115,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Bean
 	protected CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("*"));
+		configuration.setAllowedOrigins(Collections.singletonList("*"));
 		configuration.setAllowedMethods(Arrays.asList("GET","POST","HEAD", "OPTION"));
-		configuration.setAllowedHeaders(Arrays.asList("*"));
+		configuration.setAllowedHeaders(Collections.singletonList("*"));
 		configuration.addExposedHeader("Authorization");
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		source.registerCorsConfiguration("/**", configuration);

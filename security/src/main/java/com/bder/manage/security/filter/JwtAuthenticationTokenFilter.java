@@ -4,8 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -44,8 +42,8 @@ public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessi
         String username = null, password = null;
         if(StringUtils.hasText(body)) {
             JsonNode node = objectMapper.readTree(body);
-            username = node.asText("username");
-            password = node.asText("password");
+            username = node.findValue("username").toString();
+            password = node.findValue("password").toString();
         }
 
         if (username == null) {
